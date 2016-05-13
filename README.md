@@ -2,20 +2,12 @@
 
 ## Overall goal
 
-My summative task will be a combination software and hardware product.
+My summative task will be a software program which displays any function.
 
-I will program a sensor attached to an Arduino board. The sensor will be able to detect how hard a person is blowing air toward it (perhaps a pressure sensor? a mic?).
+The program will have two methods of input. One will be a selection of example functions such as x^2, 1/x, and sin(x), which will be programmed as clickable buttons to view the functions. The second method of input will be a textbox, which will take any function input and display it.
 
-When a person blows on the sensor, this information is transmitted to a Processing sketch.
-
-In the sketch, a visual representation of a "ripe" dandelion will be shown.  The dandelion seeds will disperse on screen in the sketch, simulating the physics of the motion of real dandelion seeds, when someone blows them off the stem in real life.
+If possible, I will attempt to make the viewing area of the cartesian coordinate system changeable, but this will be one of the later goals, if reached at all.
 
 ## Sub-goals
 
-* extend Motion class (that we developed earlier together) to allow for force accumulation (wind, gravity, other forces)
-* make the mouse movement translate to a wind force
-* make it so that moving the mouse causes the "seeds" of the dandelion to disperse
-* modify the visual representation of the Motion class to more closely resembly dandelion seeds
-* identify an Arduino sensor that might work to detect air pressure / volume
-* program sensor to send values to Processing sketch
-* translate sensor output to wind force in sketch
+* 
