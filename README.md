@@ -10,4 +10,9 @@ If possible, I will attempt to make the viewing area of the cartesian coordinate
 
 ## Sub-goals
 
-* 
+* Create a cartesian coordinate system as a basis for the functions being created
+* Create "example function" buttons
+* Implement example functions like x, x^2, x^3, 1/x, sin(x), etc
+* Create a working textbox, that can take a String input
+* Use the String input to graph the function
+* Implement a changeable viewing area for the cartesian coordinate system
