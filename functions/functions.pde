@@ -13,4 +13,10 @@ void draw(){
   rect(-300,300,600,-600);  // 200 in  from the left, leaving room for buttons
   line(0,300,0,-300);
   line(-300,0,300,0);
+  for(int xPixel = -300; xPixel < 300; xPixel++){
+    // y = x^2;
+    x = -1*chartWidth/2;
+    y = x*x;
+    ellipse(xPixel, y, 1,1);
+  }
 }
