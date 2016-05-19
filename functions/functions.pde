@@ -1,7 +1,7 @@
 public float chartWidth = 10;   // changeable viewing width
 public float chartHeight = 10;  // changeable viewing height
 public float x, y;
-public String function = "sin(x)";
+public String function = "";
 
 void setup(){
   size(800,600);
@@ -23,10 +23,24 @@ void draw(){
     ellipse(xPixel, yPixel, 1, 1);      // draw a circle to represent f(x) at x
     x+=chartWidth/12000;                 // 600 * 100 circles per pixel
   }
-
-  // function input box
-  rect(-495,295,190,-22);
-  drawWord("y = " + function, 12, 255, 0, 0, -490, 278);
+  
+  // Function Input Box and info
+  drawWord("Type any function and press Enter",11, 0, 0, 0, -495, 280);
+  rect(-495,270,190,-22);
+  drawWord("y = " + function, 12, 255, 0, 0, -490, 253);
+  
+  
+  drawWord("Click to see example functions",11, 0, 0, 0, -495, 205);
+  rect(-495,200,190,-45);
+  drawWord("y = x*x", 25, 255, 0, 0, -490, 170);
+  rect(-495,150,190,-45);
+  drawWord("y = 1/x", 25, 255, 0, 0, -490, 120);
+  rect(-495,100,190,-45);
+  drawWord("y = sin(x)", 25, 255, 0, 0, -490, 70);
+  rect(-495,50,190,-45);
+  drawWord("y = log(x)", 25, 255, 0, 0, -490, 20);
+  rect(-495,0,190,-45);
+  drawWord("y = sqrt(x)", 25, 255, 0, 0, -490, -30);
   
 }
 
@@ -38,12 +52,13 @@ float parseFunction(String function){
   return parsedFunction;
 }
 
+// draws a String, of size textsize, based on RGB, at position x,y based on the translated origin
 void drawWord(String word, int textsize,
                 int fillColorR, int fillColorG, int fillColorB, int x, int y){
-  scale(1, -1);
-  fill(fillColorR, fillColorG, fillColorB);
-  textSize(textsize);
-  text(word, x, -y);
-  fill(255);
-  scale(1, -1);
+  scale(1, -1);  // flips the scale so the word appears upright
+  fill(fillColorR, fillColorG, fillColorB);  // changes fill() to the specific color
+  textSize(textsize);  // changes the size of the text
+  text(word, x, -y);   // draws the text at the certain position
+  fill(255);     // returns fill() to normal (white)
+  scale(1, -1);  // flips the scale back
 }
