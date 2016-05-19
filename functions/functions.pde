@@ -44,10 +44,34 @@ void draw(){
   
 }
 
+int value = 0;
+void mouseClicked() {
+  if (mouseX > 5 && mouseX < 195) {
+    if (mouseY > 100 && mouseY < 145)
+      function = "x*x";
+    if (mouseY > 150 && mouseY < 195)
+      function = "1/x";
+    if (mouseY > 200 && mouseY < 245)
+      function = "sin(x)";
+    if (mouseY > 250 && mouseY < 295)
+      function = "log(x)";
+    if (mouseY > 300 && mouseY < 345)
+      function = "sqrt(x)";
+  }
+}
+
 float parseFunction(String function){
   float parsedFunction;
-  if(function.equals("sin(x)"))
+  if(function.equals("x*x"))
+    parsedFunction = x*x;
+  else if(function.equals("1/x"))
+    parsedFunction = 1/x;
+  else if(function.equals("sin(x)"))
     parsedFunction = sin(x);
+  else if(function.equals("log(x)"))
+    parsedFunction = log(x);
+  else if(function.equals("sqrt(x)"))
+    parsedFunction = sqrt(x);
   else parsedFunction = 0;
   return parsedFunction;
 }
