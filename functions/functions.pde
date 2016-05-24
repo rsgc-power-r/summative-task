@@ -1,7 +1,7 @@
-public float chartWidth = 10;   // changeable viewing width
-public float chartHeight = 10;  // changeable viewing height
-public float x, y;
-public String function = "";
+float chartWidth = 10;   // changeable viewing width
+float chartHeight = 10;  // changeable viewing height
+float x, y;
+String function = "";
 
 void setup(){
   size(800,600);
@@ -41,6 +41,16 @@ void draw(){
   drawWord("y = log(x)", 25, 255, 0, 0, -490, 20);
   rect(-495,0,190,-45);
   drawWord("y = sqrt(x)", 25, 255, 0, 0, -490, -30);
+  rect(-495,-50,92.5,-45);
+  drawWord("< >", 25, 255, 0, 0, -490, -80);
+  rect(-397.5,-50,92.5,-45);
+  drawWord("> <", 25, 255, 0, 0, -390, -80);
+  
+  /*
+  cursor(CROSS);
+  textSize(9);
+  println("X: " + mouseX + " Y: " + mouseY);
+*/
   
 }
 
@@ -55,8 +65,19 @@ void mouseClicked() {
       function = "sin(x)";
     if (mouseY > 250 && mouseY < 295)
       function = "log(x)";
-    if (mouseY > 300 && mouseY < 345)
+    if (mouseY > 300 && mouseY < 345){
       function = "sqrt(x)";
+      println("yaa");
+    }
+  } else
+  if (mouseX > 5 && mouseX < 98) {
+    if (mouseY > 350 && mouseY < 395) {
+      this.chartWidth += 2;
+    }
+  } else
+  if (mouseX > 102 && mouseX < 195) {
+    if (mouseY > 350 && mouseY < 395)
+      this.chartWidth -= 2;
   }
 }
 
