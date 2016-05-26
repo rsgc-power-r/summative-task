@@ -81,9 +81,11 @@ void mouseClicked() {
       function = "sqrt(x)";
     if (mouseX > 5 && mouseX < 98){
       if (mouseY > 350 && mouseY < 395)
-        chartWidth-=2;
+        if (chartWidth != 2)
+          chartWidth-=2;
       if (mouseY > 400 && mouseY < 445)
-        chartHeight-=2;
+        if (chartHeight != 2)
+          chartHeight-=2;
     }
     if (mouseX > 102 && mouseX < 195){
       if (mouseY > 350 && mouseY < 395)
