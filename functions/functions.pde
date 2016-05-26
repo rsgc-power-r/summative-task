@@ -31,7 +31,6 @@ void draw(){
   }
   
   // Function Input Box and info
-  //drawWord("Type any function and press Enter",11, 0, 0, 0, -495, 280);
   rect(-495,270,190,-22);
   drawWord("y = " + function, 12, 255, 0, 0, -490, 253);
   
@@ -58,15 +57,8 @@ void draw(){
   drawWord("     " + down, 12, 255, 0, 0, -390, -118);
   drawWord("     " + up, 12, 255, 0, 0, -390, -132);
   
-  /*
-  cursor(CROSS);
-  textSize(9);
-  println("X: " + mouseX + " Y: " + mouseY);
-*/
-  
 }
 
-int value = 0;
 void mouseClicked() {
   if (mouseX > 5 && mouseX < 195) {
     if (mouseY > 100 && mouseY < 145)
@@ -81,10 +73,10 @@ void mouseClicked() {
       function = "sqrt(x)";
     if (mouseX > 5 && mouseX < 98){
       if (mouseY > 350 && mouseY < 395)
-        if (chartWidth != 2)
+        if (chartWidth != 2)  // Do not reach 0!
           chartWidth-=2;
       if (mouseY > 400 && mouseY < 445)
-        if (chartHeight != 2)
+        if (chartHeight != 2) // Do not reach 0!
           chartHeight-=2;
     }
     if (mouseX > 102 && mouseX < 195){
