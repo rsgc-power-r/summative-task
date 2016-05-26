@@ -2,6 +2,8 @@ float chartWidth = 10;   // changeable viewing width
 float chartHeight = 10;  // changeable viewing height
 float x, y;
 String function = "";
+String up = "\u25B2";
+String down = "\u25BC";
 
 void setup(){
   size(800,600);
@@ -15,17 +17,21 @@ void draw(){
   line(0,300,0,-300);       // y axis
   line(-300,0,300,0);       // x axis
   
+  for(int i = 0; i < chartWidth; i++)  // x axis tick marks
+    line(-300+(i/chartWidth)*600, 10, -300+(i/chartWidth)*600, -10);
+  for(int i = 0; i < chartHeight; i++) // y axis tick marks
+    line(10, -300+(i/chartHeight)*600, -10 ,-300+(i/chartHeight)*600);
+  
   x = -1*chartWidth/2;      // Set the first x value to the far left,
   for(float xPixel = -300; xPixel < 300; xPixel+=0.05){ // 20 circles per pixel
     y = parseFunction(function);  // The function
-    
     float yPixel = y*600/chartHeight;   // map the y value to the y pixel
     ellipse(xPixel, yPixel, 1, 1);      // draw a circle to represent f(x) at x
     x+=chartWidth/12000;                 // 600 * 100 circles per pixel
   }
   
   // Function Input Box and info
-  drawWord("Type any function and press Enter",11, 0, 0, 0, -495, 280);
+  //drawWord("Type any function and press Enter",11, 0, 0, 0, -495, 280);
   rect(-495,270,190,-22);
   drawWord("y = " + function, 12, 255, 0, 0, -490, 253);
   
@@ -45,6 +51,12 @@ void draw(){
   drawWord("< >", 25, 255, 0, 0, -490, -80);
   rect(-397.5,-50,92.5,-45);
   drawWord("> <", 25, 255, 0, 0, -390, -80);
+  rect(-495,-100,92.5,-45);
+  drawWord("     " + up, 12, 255, 0, 0, -490, -118);
+  drawWord("     " + down, 12, 255, 0, 0, -490, -132);
+  rect(-397.5,-100,92.5,-45);
+  drawWord("     " + down, 12, 255, 0, 0, -390, -118);
+  drawWord("     " + up, 12, 255, 0, 0, -390, -132);
   
   /*
   cursor(CROSS);
@@ -65,19 +77,20 @@ void mouseClicked() {
       function = "sin(x)";
     if (mouseY > 250 && mouseY < 295)
       function = "log(x)";
-    if (mouseY > 300 && mouseY < 345){
+    if (mouseY > 300 && mouseY < 345)
       function = "sqrt(x)";
-      println("yaa");
+    if (mouseX > 5 && mouseX < 98){
+      if (mouseY > 350 && mouseY < 395)
+        chartWidth-=2;
+      if (mouseY > 400 && mouseY < 445)
+        chartHeight-=2;
     }
-  } else
-  if (mouseX > 5 && mouseX < 98) {
-    if (mouseY > 350 && mouseY < 395) {
-      this.chartWidth += 2;
+    if (mouseX > 102 && mouseX < 195){
+      if (mouseY > 350 && mouseY < 395)
+        chartWidth+=2;
+      if (mouseY > 400 && mouseY < 445)
+        chartHeight+=2;
     }
-  } else
-  if (mouseX > 102 && mouseX < 195) {
-    if (mouseY > 350 && mouseY < 395)
-      this.chartWidth -= 2;
   }
 }
 
