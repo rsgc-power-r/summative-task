@@ -29,11 +29,13 @@ The only thing a user would need to operate my program is the mouse, which can b
 
 * How does your program show evidence of your understanding of object-oriented programming concepts like encapsulation and inheritance?
 
-
+The closest thing my program has connected to object-oriented programming was my drawWord() method.
+https://github.com/rsgc-power-r/summative-task/blob/master/functions/functions.pde#L108-L116
+This is because my program was not reliant on object-oriented programming.
 
 * What evidence can you provide that your program is human-readable?
 
-
+The comments placed throughout the code assist in making the program human-readable, however the code I wrote is as readable as I could make it.
 
 * For example, where have you used:
 * descriptive function names
@@ -76,7 +78,7 @@ https://github.com/rsgc-power-r/summative-task/blob/master/functions/functions.p
 
 * How have you made correct use of source control?
 
-
+Yes, I frequently kept GitHub updated with my latest code.
 
 * For example, show that you have:
 * made frequent commits
